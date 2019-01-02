@@ -1,0 +1,13 @@
+.summary {
+    &__text {
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+
+    &__link {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--red);
+        text-decoration: underline;
+    }
+}
