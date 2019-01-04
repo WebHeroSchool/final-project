@@ -1,5 +1,5 @@
 .header {
-    @media (min-width: 0px) and (max-width: 767px) {
+    @media (max-width: 767px) {
         width: 100%;
         height: 100vh;
         position: fixed;
@@ -21,7 +21,7 @@
         padding: 30px;
         box-sizing: border-box;
 
-        @media (min-width: 0px) and (max-width: 767px) {
+        @media (max-width: 767px) {
             height: 100%;
             flex-direction: column;
         };
@@ -40,11 +40,11 @@
         line-height: 32px;
     };
 
-    @media (min-width: 0px) and (max-width: 767px) {
+    @media  (max-width: 767px) {
         font-size: 24px;
     };
 
-    @media (min-width: 0px) and (max-width: 480px) {
+    @media  (max-width: 480px) {
         width: 100%;
     };
 
@@ -62,7 +62,7 @@
         margin: auto;
     };
 
-    @media (min-width: 0px) and (max-width: 767px) {
+    @media  (max-width: 767px) {
         display: flex;
         flex-direction: column;
         margin: 0;
@@ -72,7 +72,7 @@
         color: var(--lightgrey);
         margin-right: 20px;
 
-        @media (min-width: 0px) and (max-width: 767px) {
+        @media  (max-width: 767px) {
             font-size: 20px;
             color: var(--black);
             font-weight: 600;
@@ -92,7 +92,7 @@
 }
 
 .contacts {
-    @media (min-width: 0px) and (max-width: 767px) {
+    @media (max-width: 767px) {
         display: none;
     };
 
@@ -128,7 +128,7 @@
 .all-contacts {
     display: none;
 
-    @media (min-width: 0px) and (max-width: 767px) {
+    @media (max-width: 767px) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -163,7 +163,9 @@
 }
 
 .burger {
-    @media (min-width: 0px) and (max-width: 767px) {
+    cursor: pointer;
+
+    @media (max-width: 767px) {
         display: flex;
         flex-direction: column;
         position: fixed;
@@ -203,13 +205,6 @@
     }
 }
 
-/* отключение scroll у body */
-.fixed {
-    display: block;
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
-    overflow: auto;
+.modal-open {
+    overflow: hidden;
 }

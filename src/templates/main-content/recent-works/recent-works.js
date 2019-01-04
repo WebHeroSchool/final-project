@@ -16,15 +16,16 @@ showMoreWorks.addEventListener('click', (e) => {
         showMoreWorks.dataset.isOpen = true;
         showMoreWorks.innerHTML = 'Скрыть';
 
-        window.scroll({
-            top: worksSection.offsetTop,
-            behavior: 'smooth'
-        })
     } else {
         for (let i = 1; i < recentWorksRows.length; i++) {
             recentWorksRows[i].style.display = 'none';
         }
 
+        window.scroll({
+            top: worksSection.offsetTop,
+            behavior: 'smooth'
+        })
+        
         showMoreWorks.dataset.isOpen = false;
         showMoreWorks.innerHTML = 'Смотреть ещё';
     }

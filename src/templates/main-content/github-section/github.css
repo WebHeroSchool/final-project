@@ -2,18 +2,20 @@
     &__wrapper {
         display: flex;
 
-        @media (min-width: 0px) and (max-width: 767px) {
+        @media (max-width: 767px) {
             flex-direction: column-reverse;
         };
     }
 
     &__headline {
-        width: 400px;
+        width: 50%;
         position: sticky;
         height: fit-content;
         top: 0;
+        padding-bottom: 20px;
+        box-sizing: border-box;
 
-        @media (min-width: 0px) and (max-width: 767px) {
+        @media (max-width: 767px) {
             width: 100%;
             position: static;
             margin-bottom: 30px;
@@ -30,7 +32,7 @@
         min-height: 410px;
         position: relative;
 
-        @media (min-width: 0px) and (max-width: 767px) {
+        @media (max-width: 767px) {
             width: 100%;
             min-height: 330px;
             padding-bottom: 20px;
@@ -41,7 +43,7 @@
         &:not(:last-child) {
             margin-bottom: 50px;
 
-            @media (min-width: 0px) and (max-width: 767px) {
+            @media (max-width: 767px) {
                 margin-bottom: 30px;
             };
         }
@@ -58,7 +60,7 @@
         font-weight: 600;
         margin-bottom: 16px;
 
-        @media (min-width: 0px) and (max-width: 480px) {
+        @media (max-width: 480px) {
             font-size: 20px;
         };
     }
@@ -68,7 +70,7 @@
         align-items: center;
         color: var(--lightgrey);
 
-        @media (min-width: 0px) and (max-width: 360px) {
+        @media (max-width: 360px) {
             font-size: 13px;
         };
     }
@@ -125,6 +127,8 @@
     justify-content: flex-start;
 
     &__item {
+        font-size: 20px;
+        color: var(--black);
         cursor: pointer;
 
         &:not(:last-child) {
@@ -145,13 +149,4 @@
     left: 25%;
     transform: translate(-50%, -50%) rotate(0deg);
     animation: rotation 1s infinite linear;
-}
-
-@keyframes rotation {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
 }

@@ -10,6 +10,7 @@ body {
     font-family: Exo2;
     position: relative;
     min-width: 320px;
+    overflow: auto;
 }
 
 * {
@@ -22,7 +23,7 @@ body {
     padding: var(--wide-common-padding);
     margin: auto;
 
-    @media (min-width: 0px) and (max-width: 991px) {
+    @media (max-width: 991px) {
         padding: var(--thin-common-padding);
     };
 }
@@ -30,7 +31,7 @@ body {
 .left-side {
     width: 50%;
 
-    @media (min-width: 0px) and (max-width: 650px) {
+    @media (max-width: 767px) {
         width: 100%;
     };
 }
@@ -41,19 +42,24 @@ body {
     color: var(--black);
     margin-bottom: 15px;
 
-    @media (min-width: 0px) and (max-width: 360px) {
+    @media (max-width: 360px) {
         font-size: 26px;
     };
 }
 
 .classic-text {
     font-size: 20px;
-    line-height: 18px;
+    line-height: 22px;
     font-weight: 400;
     color: var(--black);
     text-align: justify;
 
-    @media (min-width: 0px) and (max-width: 480px) {
+    @media (max-width: 480px) {
         font-size: 18px;
     };
+}
+
+.simple-ref {
+    color: var(--black);
+    text-decoration: underline;
 }

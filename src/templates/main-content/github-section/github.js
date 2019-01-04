@@ -55,6 +55,7 @@
          const allPreviousReposItems = document.querySelectorAll('.github__repository-item');
          allPreviousReposItems.forEach(elem => elem.remove());
      })
+
      if (num == currentPageNum) {
          pageElem.classList.add('pagination-list__item_active');
      }
@@ -66,13 +67,17 @@
 // Получение репозиториев на конкретной странице
     const getNewGithubPage = pageNum => {
         spinner.style.display = 'block';
+
         fetch(`${url}/users/${user}/repos?page=${pageNum}&per_page=${reposAmount}`, options)
             .then(response => {
+
                 spinner.style.display = 'none';
                 return response.json();
+
             }).then(res => {
                 const pagination = document.querySelector('.pagination-list');
-                 const arr = [];
+                const arr = [];
+
                 res.forEach(elem => {
                     arr.push({
                          name: elem.name,
@@ -84,6 +89,7 @@
                          url: elem.html_url
                     })
                 })
+
                 arr.forEach((elem, i) => {
                     gitHubReposList.insertBefore(createRepoItem(elem), pagination);
                 });
