@@ -23,7 +23,7 @@ const env = require('gulp-env'),
       rulesStyles = require('./stylelintrc.json'),
       gulpif = require('gulp-if'),
       sourcemaps = require('gulp-sourcemaps'),
-      // browserSync = require('browser-sync').create(),
+      browserSync = require('browser-sync').create(),
       paths = {
           src: {
               dir: 'src',
@@ -95,7 +95,7 @@ gulp.task('build-css', () => {
         }),
         postcssPresetEnv,
         assets({
-            loadPaths: ['build/images/'],
+            loadPaths: ['src/images/'],
             relativeTo: 'build/styles/'
         }),
         short,
@@ -112,17 +112,6 @@ gulp.task('build-css', () => {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.build.styles));
 });
-
-// gulp.task('browser-sync', () => {
-//     browserSync.init({
-//         server: {
-//             baseDir: 'build/'
-//         }
-//     });
-//     gulp.watch(paths.src.scripts, ['js-watch']);
-//     gulp.watch(paths.src.styles, ['css-watch']);
-//     gulp.watch('src/templates/index.hbs', ['compile']);
-// });
 
 gulp.task('lint', ['eslint', 'stylelint']);
 
@@ -155,19 +144,25 @@ gulp.task('image', () => {
         .pipe(gulp.dest(`${paths.build.dir}/images`));
 });
 
+gulp.task('browser-sync', () => {
+    browserSync.init({
+        server: {
+            baseDir: 'build/'
+        }
+    });
+    gulp.watch(paths.src.scripts, ['js-watch']);
+    gulp.watch(paths.src.styles, ['css-watch']);
+});
+
 gulp.task('watch', () => {
     gulp.watch(paths.templates, ['compile']);
     gulp.watch(paths.src.styles, ['build-css']);
     gulp.watch(paths.src.scripts, ['build-js']);
-    // gulp.watch('src/data.json')
-    //     .on('change', browserSync.reload);
-    // gulp.watch(`${paths.buildDir}/**/*`)
-    //     .on('change', browserSync.reload);
 });
 
 gulp.task('build', ['build-js', 'build-css', 'compile', 'fonts', 'image']);
 
 gulp.task('clean-build', ['clean']);
 gulp.task('prod', ['build']);
-gulp.task('dev', ['build', 'fonts']);
+gulp.task('dev', ['build', 'fonts', 'browser-sync']);
 gulp.task('default', ['dev']);
