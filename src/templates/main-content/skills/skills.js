@@ -16,13 +16,14 @@ const onMoreSkillsClickHandler = (btn, skills, section) => {
             skills[i].style.display = 'none';
         }
 
-        window.scroll({
-            top: section.offsetTop,
-            behavior: 'smooth'
-        })
-
         btn.dataset.isOpen = false;
         btn.innerHTML = 'Смотреть ещё';
+
+        window.scroll({
+            top: section.offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        })
     }
 }
 
@@ -30,22 +31,47 @@ const controlResize = () => {
     onMoreSkillsClickHandler(showMoreSkills, allSkills, skillsSection);
 }
 
-// В зависимости от размера окна бразуера, скрываем или разворачиваем skill's items
-window.addEventListener('resize', () => {
-    if (document.body.clientWidth <= 767) {
-        showMoreSkills.dataset.isOpen = false;
+let heightBeforeResize = window.screen.height;
+let weightBeforeResize = document.body.clientWidth;
+const checkWindowSize = () => {
+    if (Math.abs(window.screen.height - heightBeforeResize) > 80 || Math.abs(document.body.clientWidth - weightBeforeResize) > 10) {
+        heightBeforeResize = window.screen.height;
+        weightBeforeResize = document.body.clientWidth;
 
-        for (let i = allSkills.length-1; i >= 4; i--) {
-            allSkills[i].style.display = 'none';
-        }
+        if (document.body.clientWidth <= 767) {
+            showMoreSkills.dataset.isOpen = false;
+            showMoreSkills.innerHTML = 'Смотреть ещё';
 
-        showMoreSkills.addEventListener('click', controlResize);
-    } else {
-        for (let i = allSkills.length-1; i >= 4; i--) {
-            allSkills[i].style.display = 'flex';
+            for (let i = allSkills.length-1; i >= 4; i--) {
+                allSkills[i].style.display = 'none';
+            }
+
+        } else {
+            for (let i = allSkills.length-1; i >= 4; i--) {
+                allSkills[i].style.display = 'flex';
+            }
+            showMoreSkills.dataset.isOpen = true;
+            showMoreSkills.innerHTML = 'Скрыть';
         }
     }
-})
+}
+
+if (document.body.clientWidth <= 767) {
+    showMoreSkills.dataset.isOpen = false;
+    showMoreSkills.innerHTML = 'Смотреть ещё';
+
+    for (let i = allSkills.length-1; i >= 4; i--) {
+        allSkills[i].style.display = 'none';
+    }
+
+} else {
+    showMoreSkills.dataset.isOpen = true;
+}
+
+showMoreSkills.addEventListener('click', controlResize);
+
+// В зависимости от размера окна бразуера, скрываем или разворачиваем skill's items
+window.addEventListener('resize', checkWindowSize);
 
 // нумерация навыков при мобильном экране
 for (var i = 0; i < skillsItemTitles.length; i++) {

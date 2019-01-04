@@ -113,6 +113,7 @@ const paginationClickHandler = event => {
 
     const options = {
         top: githubSection.offsetTop,
+        left: 0,
         behavior: 'smooth'
     }
     window.scroll(options);

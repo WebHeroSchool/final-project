@@ -6,6 +6,7 @@ worksBtnFooter.addEventListener('click', (e) => {
     e.preventDefault();
     window.scroll({
         top: worksSection.offsetTop,
+        left: 0,
         behavior: 'smooth'
     })
 })
@@ -14,6 +15,7 @@ skillsBtnFooter.addEventListener('click', (e) => {
     e.preventDefault();
     window.scroll({
         top: skillsSection.offsetTop,
+        left: 0,
         behavior: 'smooth'
     })
 })
@@ -22,6 +24,7 @@ githubBtnFooter.addEventListener('click', (e) => {
     e.preventDefault();
     window.scroll({
         top: githubSection.offsetTop,
+        left: 0,
         behavior: 'smooth'
     })
 })

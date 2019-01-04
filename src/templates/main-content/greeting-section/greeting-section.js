@@ -66,6 +66,7 @@ arrow.addEventListener('click', (e) => {
 
     window.scroll({
         top: worksSection.offsetTop,
+        left: 0,
         behavior: 'smooth'
     })
 })
