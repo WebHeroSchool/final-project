@@ -27,9 +27,11 @@
   },
   "homepage": "https://github.com/WebHeroSchool/final-project#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "autoprefixer": "^9.3.1",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.3",
     "eslint": "^5.9.0",
     "gulp": "^3.9.1",
@@ -44,6 +46,7 @@
     "gulp-handlebars": "^5.0.2",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^5.0.3",
+    "gulp-js-import": "^1.0.6",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sourcemaps": "^2.6.4",
@@ -57,9 +60,11 @@
     "postcss-short": "^5.0.0",
     "postinstall": "^0.4.2",
     "pre-push": "^0.1.1",
-    "stylelint": "^9.8.0"
+    "stylelint": "^9.8.0",
+    "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "body-scroll-lock": "^2.6.1",
     "glob": "^7.1.3",
     "gulp-eslint": "^5.0.0",
     "smoothscroll-polyfill": "^0.4.3"

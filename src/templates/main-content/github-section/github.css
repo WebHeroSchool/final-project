@@ -4,7 +4,7 @@
 
         @media (max-width: 767px) {
             flex-direction: column-reverse;
-        };
+        }
     }
 
     &__headline {
@@ -19,7 +19,7 @@
             width: 100%;
             position: static;
             margin-bottom: 30px;
-        };
+        }
     }
 
     &__title {
@@ -36,7 +36,7 @@
             width: 100%;
             min-height: 330px;
             padding-bottom: 20px;
-        };
+        }
     }
 
     &__repository-item {
@@ -45,7 +45,7 @@
 
             @media (max-width: 767px) {
                 margin-bottom: 30px;
-            };
+            }
         }
 
         &:nth-last-of-type(2) {
@@ -62,7 +62,7 @@
 
         @media (max-width: 480px) {
             font-size: 20px;
-        };
+        }
     }
 
     &__item-description {
@@ -72,7 +72,7 @@
 
         @media (max-width: 360px) {
             font-size: 13px;
-        };
+        }
     }
 
     &__language-color {

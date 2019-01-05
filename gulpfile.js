@@ -23,7 +23,6 @@ const env = require('gulp-env'),
       rulesStyles = require('./stylelintrc.json'),
       gulpif = require('gulp-if'),
       sourcemaps = require('gulp-sourcemaps'),
-      smoothscroll = require('smoothscroll-polyfill');
       browserSync = require('browser-sync').create(),
       paths = {
           src: {

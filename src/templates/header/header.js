@@ -4,8 +4,7 @@ const githubBtn = document.getElementById('github-btn');
 const burger = document.getElementsByClassName('burger')[0];
 const inputBurger = document.getElementById('input-burger');
 const header = document.getElementsByClassName('header')[0];
-
-smoothscroll.polyfill();
+const headerWrapper = document.getElementsByClassName('header-wrapper')[0];
 
 worksBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -17,7 +16,7 @@ worksBtn.addEventListener('click', (e) => {
         left: 0,
         behavior: 'smooth'
     })
-})
+});
 
 skillsBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -44,7 +43,7 @@ githubBtn.addEventListener('click', (e) => {
 })
 
 header.addEventListener('click', (e) => {
-    if (e.target === header || e.target === header.children[0]) {
+    if (e.target === header || e.target === headerWrapper) {
         burger.classList.remove('open');
         inputBurger.checked = false;
         document.body.classList.remove('modal-open');

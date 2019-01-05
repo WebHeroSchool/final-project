@@ -26,7 +26,7 @@ body {
 
     @media (max-width: 991px) {
         padding: var(--thin-common-padding);
-    };
+    }
 }
 
 .left-side {
@@ -34,7 +34,7 @@ body {
 
     @media (max-width: 767px) {
         width: 100%;
-    };
+    }
 }
 
 .section-title {
@@ -45,7 +45,7 @@ body {
 
     @media (max-width: 360px) {
         font-size: 26px;
-    };
+    }
 }
 
 .classic-text {
@@ -56,10 +56,32 @@ body {
 
     @media (max-width: 480px) {
         font-size: 18px;
-    };
+    }
 }
 
 .simple-ref {
     color: var(--black);
     text-decoration: underline;
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+
+/* Прелоадер загрузки контента */
+.site-spinner-wrap {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: white;
+    z-index: 4242;
+}
+
+#site-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: rotation 1s infinite linear;
 }

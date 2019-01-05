@@ -4,7 +4,7 @@
 
         @media  (max-width: 767px) {
             flex-direction: column;
-        };
+        }
     }
 
     &__headline {
@@ -16,7 +16,7 @@
         @media  (max-width: 767px) {
             width: 100%;
             margin-bottom: 40px;
-        };
+        }
     }
 
     &__item-title {
@@ -33,7 +33,7 @@
                 color: var(--red);
                 font-weight: 700;
             }
-        };
+        }
     }
 
     &__skills-list {
@@ -44,7 +44,7 @@
         @media  (max-width: 767px) {
             width: 100%;
             margin-bottom: 20px;
-        };
+        }
     }
 
     &__skills-item {
@@ -55,7 +55,7 @@
 
             @media  (max-width: 480px) {
                 margin-top: 30px;
-            };
+            }
         }
     }
 
@@ -72,7 +72,7 @@
 
         @media  (max-width: 480px) {
             display: none;
-        };
+        }
     }
 
     &__show-more {
@@ -83,7 +83,6 @@
 
         @media  (max-width: 767px) {
             display: block;
-        };
+        }
     }
-
 }

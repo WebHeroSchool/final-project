@@ -10,7 +10,7 @@
             padding: var(--thin-common-padding);
             display: flex;
             flex-direction: column;
-        };
+        }
     }
 
     &__name {
@@ -20,12 +20,12 @@
 
         @media  (max-width: 767px) {
             font-size: 20px;
-        };
+        }
 
         @media  (max-width: 480px) {
             margin-bottom: 10px;
             line-height: 20px;
-        };
+        }
     }
 
     &__description {
@@ -37,7 +37,7 @@
         @media  (max-width: 767px) {
             font-size: 16px;
             margin-bottom: 30px;
-        };
+        }
     }
 
     &__menu {
@@ -47,7 +47,7 @@
 
         @media  (max-width: 767px) {
             display: none;
-        };
+        }
 
         &-name {
             color: white;
@@ -74,7 +74,7 @@
         @media  (max-width: 480px) {
             margin-bottom: 10px;
             line-height: 18px;
-        };
+        }
     }
 
     &__contact-link {
